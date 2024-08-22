@@ -6,9 +6,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
 import 'package:sizer/sizer.dart';
 
-
-
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final hasSeenIntro = await _hasSeenIntro();
@@ -38,16 +35,12 @@ Future<bool> _hasSeenIntro() async {
   final prefs = await SharedPreferences.getInstance();
   return prefs.getBool('has_seen_intro') ?? false;
 }
-
-
-
 class Intro_Screen extends StatefulWidget {
   const Intro_Screen({super.key});
 
   @override
   State<Intro_Screen> createState() => _Intro_ScreenState();
 }
-
 class _Intro_ScreenState extends State<Intro_Screen> with TickerProviderStateMixin {
   final PageController _pageController = PageController();
   int currentPage = 0;
@@ -59,9 +52,9 @@ class _Intro_ScreenState extends State<Intro_Screen> with TickerProviderStateMix
 
   List<Widget> _buildPageContent() {
     return [
-      Image.asset("assets/Design/Screen_1/ic_sc2.png"),
-      Image.asset("assets/Design/Screen_1/ic_sc3.png"),
-      Image.asset("assets/Design/Screen_1/ic_sc4.png"),
+      Image.asset("aseets/images/step-one.png"),
+      Image.asset("aseets/images/step-three.png"),
+      Image.asset("aseets/images/step-two.png"),
     ];
   }
 
@@ -330,14 +323,12 @@ class _Intro_ScreenState extends State<Intro_Screen> with TickerProviderStateMix
     );
   }
 }
-
 class Home_Screen extends StatefulWidget {
   const Home_Screen({super.key});
 
   @override
   State<Home_Screen> createState() => _Home_ScreenState();
 }
-
 class _Home_ScreenState extends State<Home_Screen> {
   @override
   Widget build(BuildContext context) {
